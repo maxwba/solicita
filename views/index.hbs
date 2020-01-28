@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="logo">
+        <img src="img/logo.svg" alt="">
+        <a class="navbar-brand" href="/">Solicita</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/signup">Signup</a>
+            <a class="nav-item nav-link" href="/login">Login</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="secH1">
+        <h1 class="display-4">Organize o seu trabalho</h1>
+    </div>
+    <div class="secP">
+        <p>Escreva, planeje, colabore e se organize. Solicita é tudo que você precisa para organizar suas tarefas.</p>
+        <div class="form-style-home">
+            <form action="/signup" method="POST">
+                <input type="text" name='username' placeholder="Name" />
+                <input type="password" name='password' placeholder="Password" />
+                {{!-- <button type="submit">Iniciar</button> --}}
+                <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false">
+                    Iniciar
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="sectionFinal">
+    <div class="secFinalH1">
+        <h2>Experimente agora!</h2>
+        <p>É de graça e funciona para todas equipes</p>
+    </div>
+    <div class="sectFinalIcons">
+        <img src="/img/description-24px.svg" alt="">
+        <img src="img/date_range-24px.svg" alt="">
+        <img src="img/done-24px.svg" alt="">
+    </div>
+</section>

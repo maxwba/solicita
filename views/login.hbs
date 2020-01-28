@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="logo">
+        <img src="img/logo.svg" alt="">
+        <a class="navbar-brand" href="/">Solicita</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/signup">Signup</a>
+            <a class="nav-item nav-link" href="/login">Login</a>
+        </div>
+    </div>
+</nav>
+
+<div class="form-style-8">
+  <h2>Login</h2>
+  <form action="/login" method="POST">
+    <input type="text" name='username' placeholder="Name" />
+    <input type="password" name='password' placeholder="Password" />
+    {{!-- <button type="submit">Login</button> --}}
+    <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false">
+      Login
+    </button>
+  </form>
+</div>

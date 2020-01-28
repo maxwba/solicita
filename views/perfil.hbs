@@ -1,0 +1,85 @@
+{{!-- Header sections --}}
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#">Olá {{this.user.username}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/logout">Logout</a>
+    </div>
+  </div>
+</nav>
+
+{{!-- TaskNew sections --}}
+<div class="form-style-8">
+  <h2>Nova tarefa</h2>
+  <form action="/perfil" method="POST">
+    <input type="hidden" name="username" value="{{this.user.username}}">
+    <input type="hidden" name="userId" value="{{this.user._id}}">
+    <input type="text" name='title' placeholder='Digite o titulo' />
+    <input type="text" name='description' placeholder="Digite a descricao da tarefa" />
+
+    <label>Prioridade: </label>
+    <select name="priority">
+      <option value="Alta prioridade">Alta prioridade</option>
+      <option value="Média prioridade">Média prioridade</option>
+      <option value="Pouca prioridade">Pouca prioridade</option>
+    </select>
+
+    <label>Tipo da tarefa:</label>
+    <select name="types">
+      <option value="Briefing">Briefing</option>
+      <option value="Analise">Analise</option>
+      <option value="Desenvolvimento">Desenvolvimento</option>
+      <option value="Aprovação">Aprovação</option>
+      <option value="Refação">Refação</option>
+    </select>
+
+    <label>Status da tarefa: </label>
+    <select name="states">
+      <option value="Backlog">Backlog</option>
+      <option value="Fazendo">Fazendo</option>
+      <option value="Feito">Feito</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false">
+      Criar
+    </button>
+  </form>
+</div>
+
+{{!-- TaskList sections --}}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Prioridade</th>
+      <th scope="col">Título</th>
+      <th scope="col">Descriação</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Estado</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  {{!-- TaskList loop section --}}
+  <tbody>
+    {{#each this.tasks}}
+    {{#if isHp}}
+    <tr class="bg-priority">
+    {{else}}
+    <tr>
+    {{/if}}  
+      <th scope="row">{{priority}}</th>
+      <td>{{title}}</td>
+      <td>{{description}}</td>
+      <td>{{types}}</td>
+      <td>{{states}}</td>
+      <td><a href="/task/{{_id}}">Edit</a></td>
+      <td><a href="/task/{{_id}}/delete">Apagar</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

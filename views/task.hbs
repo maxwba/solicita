@@ -1,0 +1,35 @@
+<div class="form-style-8">
+  <h2>Editar tarefa</h2>
+  <form action="/task/{{tasks._id}}" method="POST">
+    <input type="hidden" name="_id" value="{{_id}}">
+    <input type="text" name='title' value="{{tasks.title}}" />
+    <input type="text" name='description' value="{{tasks.description}}" />
+
+    <label>Prioridade atual: {{tasks.priority}}</label>
+    <select name="priority">
+      <option value="Alta prioridade">Alta prioridade</option>
+      <option value="Média prioridade">Média prioridade</option>
+      <option value="Pouca prioridade">Pouca prioridade</option>
+    </select>
+
+    <label>Tipo atual: {{tasks.types}} </label>
+    <select name="types">
+      <option value="Briefing">Briefing</option>
+      <option value="Analise">Analise</option>
+      <option value="Desenvolvimento">Desenvolvimento</option>
+      <option value="Aprovação">Aprovação</option>
+      <option value="Refação">Refação</option>
+    </select>
+
+    <label>Status da tarefa: {{tasks.states}} </label>
+    <select name="states">
+      <option value="Backlog">Backlog</option>
+      <option value="Fazendo">Fazendo</option>
+      <option value="Feito">Feito</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false">
+      Salvar
+    </button>
+  </form>
+</div>
